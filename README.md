@@ -2,25 +2,35 @@
 
 A tiny Fluent Design calculator for your desktop.
 
-Calculator is a simple calculator app designed to save desktop space. Instead of a large number pad, it stays as small as possible — just an expression input field and a live result box. The result is a small rectangular window that always shows both what you just typed and the answer, so you always know exactly what you're calculating and never get surprised by an accidental typo the way you can with the classic Windows Calculator.
+Calculator is a simple calculator app designed to save desktop space. Instead of a large number pad, it stays as small as possible — just an expression input and a live result box. The result is a small rectangular window that always shows both what you just typed and the answer, so you always know exactly what you're calculating and never get surprised by an accidental typo the way you can with the classic Windows Calculator.
 
 ## Features
 
-- **Compact window** — only the expression input and result box. Default 440×320, resizable down to 200×120, minimum footprint on your desktop.
-- **Live expression display** — see exactly what you typed before the result is computed.
-- **Pin on top** — keep the calculator above all other windows with one click.
-- **Adjustable font sizes** — change the expression font (10–72) and result font (16–96) to suit your screen.
-- **Fluent Design style** — Segoe UI, flat controls with hover/pressed states, and a custom title bar.
-- **Settings auto-save** — font sizes and window size/position are remembered between sessions.
-- **Portable or installed** — run the single exe anywhere, or use the installer.
+- **Compact, resizable window** — borderless design with just an expression field and a bold result label. Default 440×320, resizable down to 200×120. Drag the title bar to move, drag any edge or corner to resize.
+- **Live result** — the result updates as you type, with thousands separators (e.g. `= 1,234,567`) and scientific notation for very large or small numbers.
+- **Smart input display** — `*` and `/` are automatically converted to `×` and `÷` as you type, and all operators (`+ - × ÷ %`) are highlighted in red so the expression is easy to read.
+- **Clear feedback** — invalid input like division by zero shows `Error` in red; an incomplete expression (trailing operator or unclosed parenthesis) keeps the last valid result on screen.
+- **Pin on top** — keep the calculator above all other windows with one click (the pin button is highlighted while active).
+- **Adjustable font sizes** — the settings panel (⚙) lets you change the expression font size (10–72) and result font size (16–96), applied live.
+- **Settings auto-save** — font sizes, window size, position and state are remembered between sessions (stored in `%LocalAppData%\Calculator\calculator.dat`).
+- **Custom Fluent-style UI** — Segoe UI, a minimal custom title bar (pin ⦿, minimize `_`, close ✕), flat controls with hover/pressed states, and a clean white background.
+- **Keyboard friendly** — `Esc` clears the input; `Enter` is disabled so the expression can't wrap to a new line.
 
-## Download
+## Calculator syntax
 
-Grab the latest release from the [Releases page](https://github.com/ngocthanhgl/Calculator/releases) — the `Calculator.exe` asset is a portable build.
+Type a normal expression with `+`, `-`, `*` (shown as ×), `/` (shown as ÷), `%` (modulo) and parentheses, e.g. `(12 + 34) * 5`. Decimal numbers are supported. Evaluation is left-to-right, so `2 + 3 * 4` = 20.
 
-## Installer
+## Download & portable use
 
-`InstallCalculator.exe` installs the app to `%LocalAppData%\Calculator` and copies a shortcut to your Desktop. It stops any running instance before installing.
+Calculator is fully portable — no installation needed.
+
+1. Download `Calculator.exe` from the [Releases page](https://github.com/ngocthanhgl/Calculator/releases).
+2. Double-click it anywhere — it runs straight away from any folder or USB stick.
+3. Settings are saved to `%LocalAppData%\Calculator\calculator.dat`, not next to the exe, so the app stays portable.
+
+### Optional installer
+
+If you prefer, `InstallCalculator.exe` copies the app to a location you choose (default `%LocalAppData%\Calculator`) and puts a copy on your Desktop. It stops any running instance before installing. This is just a file copier — no registry entries, no system changes, nothing to uninstall.
 
 ## Building from source
 
