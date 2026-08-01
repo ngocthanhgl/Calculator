@@ -1,0 +1,46 @@
+name: Build Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g. 1.0.0)'
+        required: false
+        default: '1.0.0'
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine version
+        id: version
+        shell: pwsh
+        run: |
+          $version = "${{ github.event.inputs.version }}"
+          if ([string]::IsNullOrWhiteSpace($version)) {
+            $version = "${{ github.ref_name }}".TrimStart('v')
+          }
+          Write-Output "version=$version"
+
+      - name: Build Calculator.exe
+        shell: pwsh
+        run: ./build.ps1 -NoLaunch
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Calculator v${{ steps.version.outputs.version }}
+          body: |
+            Fluent Design Calculator release v${{ steps.version.outputs.version }}
+            Built automatically from source on `windows-latest`.
+          files: Calculator.exe

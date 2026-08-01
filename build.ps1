@@ -1,3 +1,5 @@
+param([switch]$NoLaunch)
+
 $cscPaths = @(
     "$env:windir\Microsoft.NET\Framework64\v4.0.30319\csc.exe",
     "$env:windir\Microsoft.NET\Framework\v4.0.30319\csc.exe"
@@ -26,8 +28,10 @@ $proc = Start-Process -FilePath $csc -ArgumentList $cscArgs -NoNewWindow -Wait -
 
 if ($proc.ExitCode -eq 0) {
     Write-Host "DONE: Calculator.exe created."
-    Write-Host "Launching..."
-    Start-Process (Join-Path (Get-Location) "Calculator.exe")
+    if (-not $NoLaunch) {
+        Write-Host "Launching..."
+        Start-Process (Join-Path (Get-Location) "Calculator.exe")
+    }
 } else {
     Write-Host "FAILED (exit code $($proc.ExitCode))."
     Write-Host "Try building manually:"
