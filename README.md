@@ -28,10 +28,6 @@ Calculator is fully portable — no installation needed.
 2. Double-click it anywhere — it runs straight away from any folder or USB stick.
 3. Settings are saved to `%LocalAppData%\Calculator\calculator.dat`, not next to the exe, so the app stays portable.
 
-### Optional installer
-
-If you prefer, `InstallCalculator.exe` copies the app to a location you choose (default `%LocalAppData%\Calculator`) and puts a copy on your Desktop. It stops any running instance before installing. This is just a file copier — no registry entries, no system changes, nothing to uninstall.
-
 ## Building from source
 
 Requires the .NET Framework 4.x C# compiler (`csc.exe`, ships with the .NET Framework SDK or Visual Studio).

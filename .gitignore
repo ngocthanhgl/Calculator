@@ -1,0 +1,7 @@
+# Build outputs
+Calculator.exe
+InstallCalculator.exe
+
+# Debug logs
+err.txt
+out.txt
