@@ -6,12 +6,12 @@ Calculator is a simple calculator app designed to save desktop space. Instead of
 
 ## Features
 
-- **Compact, resizable window** — borderless design with just an expression field and a bold result label. Default 440×320, resizable down to 200×120. Drag the title bar to move, drag any edge or corner to resize.
+- **Compact, resizable window** — borderless design with just an expression field and a bold result label. Default **440×320**, minimum **200×120**, up to your screen's working area. Drag the title bar to move, drag any edge or corner to resize. Size, position and state (normal/minimized) are restored on the next launch.
 - **Live result** — the result updates as you type, with thousands separators (e.g. `= 1,234,567`) and scientific notation for very large or small numbers.
 - **Smart input display** — `*` and `/` are automatically converted to `×` and `÷` as you type, and all operators (`+ - × ÷ %`) are highlighted in red so the expression is easy to read.
 - **Clear feedback** — invalid input like division by zero shows `Error` in red; an incomplete expression (trailing operator or unclosed parenthesis) keeps the last valid result on screen.
 - **Pin on top** — keep the calculator above all other windows with one click (the pin button is highlighted while active).
-- **Adjustable font sizes** — the settings panel (⚙) lets you change the expression font size (10–72) and result font size (16–96), applied live.
+- **Adjustable font sizes** — the settings panel (⚙) lets you change the expression font size (**default 10 pt**, range 10–72) and the result font size (**default 16 pt bold**, range 16–96), in steps of 2, applied live.
 - **Settings auto-save** — font sizes, window size, position and state are remembered between sessions (stored in `%LocalAppData%\Calculator\calculator.dat`).
 - **Custom Fluent-style UI** — Segoe UI, a minimal custom title bar (pin ⦿, minimize `_`, close ✕), flat controls with hover/pressed states, and a clean white background.
 - **Keyboard friendly** — `Esc` clears the input; `Enter` is disabled so the expression can't wrap to a new line.
