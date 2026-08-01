@@ -30,6 +30,7 @@ jobs:
             $version = "${{ github.ref_name }}".TrimStart('v')
           }
           Write-Output "version=$version"
+          "version=$version" >> $env:GITHUB_OUTPUT
 
       - name: Build Calculator.exe
         shell: pwsh
