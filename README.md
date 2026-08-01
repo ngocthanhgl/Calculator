@@ -16,6 +16,16 @@ Calculator is a simple calculator app designed to save desktop space. Instead of
 - **Custom Fluent-style UI** — Segoe UI, a minimal custom title bar (pin ⦿, minimize `_`, close ✕), flat controls with hover/pressed states, and a clean white background.
 - **Keyboard friendly** — `Esc` clears the input; `Enter` is disabled so the expression can't wrap to a new line.
 
+## Screenshots
+
+The compact calculator window at its default size:
+
+![Calculator window](screenshots/screen1.png)
+
+Calculator on the desktop:
+
+![Calculator on desktop](screenshots/screen2.png)
+
 ## Calculator syntax
 
 Type a normal expression with `+`, `-`, `*` (shown as ×), `/` (shown as ÷), `%` (modulo) and parentheses, e.g. `(12 + 34) * 5`. Decimal numbers are supported. Evaluation is left-to-right, so `2 + 3 * 4` = 20.
